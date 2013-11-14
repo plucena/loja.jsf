@@ -18,6 +18,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
 
+
 @Named("clienteController")
 @SessionScoped
 public class ClienteController implements Serializable {
@@ -28,7 +29,65 @@ public class ClienteController implements Serializable {
     private session.ClienteFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+   
+    private boolean loggedIn=false; 
+    private String email;
+    private String senha;
+    
+    public String login() {
+    try{    
+        Cliente c = this.getCliente(email);
+        if(c!=null){
+            System.out.println("nao nulo " + c.getEmail());
+            if(c.getSenha().equals(senha))
+                loggedIn = true;
+          }
+          else
+              System.out.println("nulao " + this.email);
+        
+        if(loggedIn)
+            return "index?faces-redirect=true";
+        else
+           return "login";
+    }
+    catch(Exception e) {
+        e.printStackTrace();
+        return "erro";
+     }
+     
+    }
+    
+    
+    public void logout(){
+        
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+    
+    
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+            
+            
     public ClienteController() {
     }
 
