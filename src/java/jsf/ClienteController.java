@@ -50,6 +50,7 @@ public class ClienteController implements Serializable {
     
     
     public String logout(){
+        this.loggedIn = false;
         return "login";
     }
     
