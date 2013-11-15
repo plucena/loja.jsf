@@ -10,7 +10,7 @@
 
         <h:outputLabel for="cpf">CPF</h:outputLabel>
 
-        <h:inputText id="cpf" value="#{clienteController.email}"/>
+        <h:inputText id="cpf" value="#{clienteController.cpf}"/>
 
         <h:outputLabel for="senha">Password:</h:outputLabel>
 
@@ -20,9 +20,7 @@
 
     <h:commandButton value="Login" action="#{clienteController.login}" rendered="#{!clienteController.loggedIn}"/>
    
-    <!--
-    <h:commandButton value="Logout" acion="#{clienteController.logout()}" rendered="#{clienteController.loggedIn}"/>
-     -->
+    <h:commandButton value="Logout" action="#{clienteController.logout()}" rendered="#{clienteController.loggedIn}"/>
      
 </h:form>
     

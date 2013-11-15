@@ -35,32 +35,24 @@ public class ClienteController implements Serializable {
     private String senha;
     
     public String login() {
-    try{    
         Cliente c = this.getCliente(cpf);
         if(c!=null){
             System.out.println("nao nulo " + c.getEmail());
             if(c.getSenha().equals(senha))
                 loggedIn = true;
           }
-          else
-              System.out.println("nulao " + this.cpf);
         
         if(loggedIn)
             return "index?faces-redirect=true";
         else
            return "login";
     }
-    catch(Exception e) {
-        e.printStackTrace();
-        return "erro";
-     }
-     
-    }
     
     
-    public void logout(){
-        
+    public String logout(){
+        return "login";
     }
+    
 
     public String getCpf() {
         return cpf;
