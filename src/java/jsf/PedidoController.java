@@ -47,6 +47,7 @@ public class PedidoController implements Serializable {
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
+
                 @Override
                 public int getItemsCount() {
                     return getFacade().count();
@@ -228,5 +229,7 @@ public class PedidoController implements Serializable {
                 throw new IllegalArgumentException("object " + object + " is of type " + object.getClass().getName() + "; expected type: " + Pedido.class.getName());
             }
         }
+
     }
+
 }

@@ -17,6 +17,7 @@ public class Cliente implements Serializable {
     private String cpf;
     private String email;
     private String senha;
+    private String nome;
     
     @Override
     public boolean equals(Object object) {
@@ -66,5 +67,15 @@ public class Cliente implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
+    
     
 }

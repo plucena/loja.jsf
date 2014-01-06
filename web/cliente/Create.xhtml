@@ -21,6 +21,8 @@
                     <h:inputText id="email" value="#{clienteController.selected.email}" title="#{bundle.CreateClienteTitle_email}" />
                     <h:outputLabel value="#{bundle.CreateClienteLabel_senha}" for="senha" />
                     <h:inputText id="senha" value="#{clienteController.selected.senha}" title="#{bundle.CreateClienteTitle_senha}" />
+                    <h:outputLabel value="#{bundle.CreateClienteLabel_nome}" for="nome" />
+                    <h:inputText id="nome" value="#{clienteController.selected.nome}" title="#{bundle.CreateClienteTitle_nome}" />
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{clienteController.create}" value="#{bundle.CreateClienteSaveLink}" />
